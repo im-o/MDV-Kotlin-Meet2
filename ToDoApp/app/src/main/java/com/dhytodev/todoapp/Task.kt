@@ -3,7 +3,7 @@ package com.dhytodev.todoapp
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "tasks")
 data class Task(
     @PrimaryKey
     val id : Int,
