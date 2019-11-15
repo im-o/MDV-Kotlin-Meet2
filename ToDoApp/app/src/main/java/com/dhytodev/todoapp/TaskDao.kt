@@ -8,7 +8,7 @@ import androidx.room.Query
 interface TaskDao {
 
     @Insert
-    fun insertTask(task: Task) : Int
+    fun insertTask(task: Task) : Long
 
     @Query("SELECT * FROM tasks")
     fun getTasks() : List<Task>

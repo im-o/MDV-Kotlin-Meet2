@@ -23,7 +23,8 @@ abstract class TaskDatabase : RoomDatabase() {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         TaskDatabase::class.java, "todoapp.db"
-                    ).build()
+                    ).allowMainThreadQueries()
+                        .build()
                 }
                 return INSTANCE as TaskDatabase
             }
