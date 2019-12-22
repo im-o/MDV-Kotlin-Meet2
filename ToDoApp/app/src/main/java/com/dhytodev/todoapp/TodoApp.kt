@@ -11,7 +11,7 @@ import org.koin.core.context.startKoin
  */
 
 @SuppressLint("Registered")
-class TodoApp: Application() {
+class TodoApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
