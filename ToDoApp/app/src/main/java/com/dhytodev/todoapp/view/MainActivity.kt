@@ -2,6 +2,7 @@ package com.dhytodev.todoapp.view
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -34,11 +35,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeTask() {
         taskViewModel.getAllTasks().observe(this, Observer {
+            listTask.clear()
             if (it.isNotEmpty()) {
-                listTask.clear()
                 listTask.addAll(it)
-                rv_main.adapter?.notifyDataSetChanged()
-            }
+                tv_nodata.visibility = View.INVISIBLE
+            } else tv_nodata.visibility = View.VISIBLE
+            rv_main.adapter?.notifyDataSetChanged()
         })
     }
 
